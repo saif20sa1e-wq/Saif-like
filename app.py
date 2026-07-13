@@ -20,7 +20,7 @@ def load_accounts():
 
 # ✅ جلب التوكن من API
 async def fetch_token(session, uid, password):
-    url = f"https://damar-free-jwt.spcfy.eu/guest?uid={uid}&pw={password}"
+    url = f"https://mafu-token-converter-production.up.railway.app/mafu?get_jwt&uid={uid}&password={password}"
 
     try:
         async with session.get(url, timeout=10) as res:
