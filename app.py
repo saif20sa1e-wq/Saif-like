@@ -28,7 +28,7 @@ async def fetch_token(session, uid, password):
                 data = await res.json()
 
                 if data.get("status") == "success":
-                    return data.get("token")
+                    return data.get("jwt_token")
 
     except Exception:
         return None
