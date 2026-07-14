@@ -28,7 +28,7 @@ async def fetch_token(session, uid, password):
                 data = await res.json()
 
                 if data.get("status") == "success":
-                    return data.get("jwt_token")
+                    return data.get("token") or data.                        get("jwt_token")
 
     except Exception:
         return None
@@ -168,7 +168,7 @@ def like_handler():
 
 @app.route('/')
 def home():
-    return jsonify({"status": "online", "message": "Like API is running ✅ saif"})
+    return jsonify({"status": "online", "message": "Like API is running ✅ "})
 
 # ✅ هذا لا يُستخدم في Vercel ولكن نتركه للتشغيل المحلي
 if __name__ == "__main__":
